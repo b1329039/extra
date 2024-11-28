@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    int firstday=-5+1,a[500],nextline,day,toatalday,month[12]={31,28,31,30,31,30,31,31,30,31,30,31},monthcontrol=0,date,space;
+    toatalday=365-firstday;
+    date=firstday;
+    for(day=0;day<=toatalday;day++)
+    {
+        a[day]=date++;
+        nextline=day%7;
+        printf(" ");
+        if(a[day]<=0){
+            printf("  ");
+        }
+        else{
+            printf("%2d",a[day]);    
+        }
+        
+        if(nextline==6){
+            printf("\n");
+        }
+        if(a[day]>=month[monthcontrol]){
+            date=date-month[monthcontrol];
+            monthcontrol=monthcontrol+1;
+            if(nextline!=6){
+            printf("\n");
+                for(space=0;space<=nextline;space++){
+                printf("   ");
+                }
+            }
+            else{
+                printf("\n");
+            }
+        }
+    }
+    return 0;
+}
