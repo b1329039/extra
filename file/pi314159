@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    float cout,c,nn;
+    int n;
+    double cc;
+    for(n=1;n>=0;n++){
+        if(n%2==1){   
+            nn=-1+2*n;
+            c=(4/nn);
+            cout=cout+(4/nn);
+        }
+        else{
+            nn=-1+2*n;
+            c=(4/nn);
+            cout=cout-(4/nn);
+        }
+            printf("n=%d  cout=%.6f  c=%.5f\n",n,cout,c);
+        if((cout*100000)==314159){
+            printf("n=%d",n);
+            return 0;
+        }
+    }
+}
