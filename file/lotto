@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<time.h>
+
+int main(){
+    srand ((unsigned) time(NULL));
+    int n=7;
+    int seat=0;
+    int storage[8]={0};
+    int whole[61];
+    for (int j=0;j<60;j++){
+        whole[j]=j+1;
+    }
+    for (int i=0;i<n;i++){
+        int num = rand()%10+1;
+        for(int k=0;k<7;k++){
+            if(num==storage[k]){
+                n++;
+                return;
+            }
+            else{
+                storage[seat]=num;
+            }
+        }
+        if(storage[seat]<10){
+            printf("0%d\n",storage[seat]);
+        }
+        else{
+            printf("%d\n",storage[seat]);
+        }
+    }
+    return 0;
+}
