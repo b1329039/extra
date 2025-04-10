@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void nine(int n,int m){
+    if(n==0||m==0){
+        return;
+    }
+    if(m==1){
+        nine(n-1,m);
+        if (n==1){
+            printf("%d*%d=%2d    ",m,n,n*m);
+            return;
+        }
+        printf("\n");
+    }
+    nine(n,m-1);
+    printf("%d*%d=%2d    ",m,n,n*m);
+    return;
+}
+
+int main(){
+    nine(9,9);
+}
